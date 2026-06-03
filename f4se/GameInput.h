@@ -85,7 +85,11 @@ public:
 class ThumbstickEvent : public IDEvent, public InputEvent
 {
 public:
-	UInt32 unk20[6];
+	UInt64 stick;
+	float x;
+	float y;
+	UInt32 unk40; // direction with deadzones 1 up 2 right 3 down 4 left
+	UInt32 unk44; // previous direction
 };
 STATIC_ASSERT(sizeof(ThumbstickEvent) == 0x048);
 
